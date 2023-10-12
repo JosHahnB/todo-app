@@ -32,9 +32,7 @@ const Todo = () => {
       }
       return item;
     });
-
     setList(items);
-
   }
 
   useEffect(() => {
@@ -48,9 +46,9 @@ const Todo = () => {
 
   return (
     <>
-      <header data-testid="todo-header">
-        <h1 data-testid="todo-h1">To Do List: {incomplete} items pending</h1>
-      </header>
+      {/* <header data-testid="todo-header">
+        <h1 data-testid="todo-h1">To Do List: {incomplete.length} items pending</h1>
+      </header> */}
 
       <form onSubmit={handleSubmit}>
 
