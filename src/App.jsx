@@ -4,8 +4,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { darkMode } from './themes/darkMode.js';
 import { lightMode } from './themes/lightMode.js';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Settings from "./Components/Settings/settings.jsx"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Settings from './Components/Settings/settings.jsx';
 
 export const GlobalContext = createContext(null);
 

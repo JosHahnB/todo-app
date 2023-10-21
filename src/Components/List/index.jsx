@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { GlobalContext } from '../../App';
 import { useContext, useMemo, useState } from 'react';
-import { Pagination } from '@mui/material';
+import { Box, Pagination, Button } from '@mui/material';
 
 const TodoList = ({ list, toggleComplete, incomplete }) => {
   // console.log(list);
@@ -38,18 +38,25 @@ const TodoList = ({ list, toggleComplete, incomplete }) => {
   }, [page, displayCount]);
 
   return (
-    <>
+    <Box
+      sx={{
+        width: '500px',
+        margin: 'auto',
+        padding: '1rem',
+        backgroundColor: '#f5f5f5',
+      }}
+    >
       {listToUse.slice(startIndex, endIndex).map((item) => (
         <div key={item.id}>
-          <p>{item.text}</p>
-          <p>
-            <small>Assigned to: {item.assignee}</small>
-          </p>
+          <Box sx={{ fontSize: '16px', fontWeight: 'bold' }}>{item.text}</Box>
+          <Box sx={{ fontSize: '14px', color: '#666' }}>
+            Assigned to: {item.assignee}
+          </Box>
           <p>
             <small>Difficulty: {item.difficulty}</small>
           </p>
           <div onClick={() => toggleComplete(item.id)}>
-            Complete: {item.complete.toString()}
+            <Button>{item.complete ? 'Completed' : 'Incomplete'}</Button>
           </div>
           <hr />
         </div>
@@ -60,7 +67,7 @@ const TodoList = ({ list, toggleComplete, incomplete }) => {
         color="secondary"
         onChange={handlePageChange}
       />
-    </>
+    </Box>
   );
 };
 
