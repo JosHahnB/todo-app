@@ -1,12 +1,10 @@
-import { useEffect } from 'react';
-
 import { GlobalContext } from '../../App';
-import { useContext, useMemo, useState } from 'react';
+import { useEffect, useContext, useMemo, useState } from 'react';
 import { Box, Pagination, Button } from '@mui/material';
 
 const TodoList = ({ list, toggleComplete, incomplete }) => {
   // console.log(list);
-  const { hideCompleted, displayCount } = useContext(GlobalContext);
+  const { hideCompleted, initialCount } = useContext(GlobalContext);
   const [count, setCount] = useState(0);
   const [page, setPage] = useState(1);
 
@@ -18,24 +16,24 @@ const TodoList = ({ list, toggleComplete, incomplete }) => {
   }, [hideCompleted, incomplete, list]);
 
   useEffect(() => {
-    // figure out haw many pages wen eed by dividing the list to use by the displayCount
-    const totalPages = Math.floor(listToUse.length / displayCount);
-    const addOne = listToUse.length % displayCount;
+    // figure out haw many pages wen eed by dividing the list to use by the initialCount
+    const totalPages = Math.floor(listToUse.length / initialCount);
+    const addOne = listToUse.length % initialCount;
     console.log(totalPages, addOne);
     setCount(addOne ? totalPages + 1 : totalPages);
-  }, [displayCount, listToUse]);
+  }, [initialCount, listToUse]);
 
   const handlePageChange = (e, ePage) => {
     setPage(ePage);
   };
 
   const startIndex = useMemo(() => {
-    return (page - 1) * displayCount;
-  }, [displayCount, page]);
+    return (page - 1) * initialCount;
+  }, [initialCount, page]);
 
   const endIndex = useMemo(() => {
-    return (page - 1) * displayCount + displayCount;
-  }, [page, displayCount]);
+    return (page - 1) * initialCount + initialCount;
+  }, [page, initialCount]);
 
   return (
     <Box

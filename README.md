@@ -1,8 +1,14 @@
-# React + Vite
+# To Do App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Author: Josh Hahn
 
-Currently, two official plugins are available:
+### Lab 31
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Implement the React context API for defining settings across the entire application.
+
+- Create React Context for managing application display settings and provide this at the application level.
+- Add the following defaults to the context provider’s state, they will not be changeable in this lab. - Display three items. - Hide completed items using a boolean. - Define “difficulty” as a default sort word to optionally use in the stretch goal.
+  Consume and utilize context values throughout your components.
+- Show a maximum of three items per screen by default in the `<List />` component.
+- Use the Mantine (or MUI) `<Pagination />` component to allow users to navigate a list of items.
+- Hide completed items in the list by default (the ability to show will be added in a later lab)
