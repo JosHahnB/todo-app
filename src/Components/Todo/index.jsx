@@ -33,7 +33,8 @@ const Todo = () => {
       }
       return item;
     });
-    const newIncomplete = items.filter((it) => it);
+    const newIncomplete = items.filter((it) => it.complete);
+    setIncomplete(newIncomplete)
     setList(items);
   }
 
