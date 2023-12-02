@@ -13,6 +13,12 @@ Implement the React context API for defining settings across the entire applicat
 - Use the Mantine (or MUI) `<Pagination />` component to allow users to navigate a list of items.
 - Hide completed items in the list by default (the ability to show will be added in a later lab)
 
+#### To run
+
+npm i
+npm run dev
+http://localhost:5173/
+
 ### Lab 32
 
 Implement the Context API to make some basic application settings available to components.
